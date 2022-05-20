@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style type="text/css">
+	body{background: #111111; display: flex; align-items: center; justify-content: center; min-height:100vh;}*{margin: 0; padding: 0; box-sizing: border-box;}
+	nav {width: 310px; height: 325px; background: black; border-radius:7px; box-shadow: 0 0 25px black; position: relative; display: flex; justify-content: center; cursor: pointer; margin: 20px;}
+	div {width:310px; height: 10px; background:var(--clr);transition:1s; position: relative; top: 315px; border-radius: 7px; cursor: pointer;}
+	nav:hover div,nav.active div  {height: 325px; top: 0;}
+
+	span {width: 80px; height: 80px; background:var(--clr); border-radius: 50%; cursor: pointer; color: white; font-size: 41px; position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center;z-index: 2; top: 22px; transition: 1s; box-shadow: 0 0 17px var(--clr);}
+	nav:hover span,nav.active span {background: white;  color: #3774a1; box-shadow: 0 0 17px white;}
+	label {position: absolute; display: flex; flex-direction: column; color: white; z-index: 1; max-width: 239px; text-align: center; top:150px; cursor: pointer;}
+	h4{font-family: bold; font-weight: bold; text-shadow: 0 0 9px white; transition: 1s;}
+	nav:hover h4,nav.active h4{text-shadow: 0 0 38px var(--clr); color:var(--clr);}
+	h3{position: absolute; display: flex; flex-direction: column; color:var(--clr); font-family: bold; font-weight: bold; font-size: 25px; z-index: 10; text-shadow: 0 0 10px var(--clr); top: 114px; transition: 1s; cursor: pointer;}
+	nav:hover h3,nav.active h3{color:white; text-shadow: 0 0 23px white; animation:kara 4s;}
+	@keyframes kara {0%{transform: scale(1.54);}}
+	img {width: 40px; height: 40px; border-radius: 6px;}
+
+
+
+	@media only screen and (max-width: 760px) {
+		body{ flex-direction: column;}
+	}
+</style>
+</head>
+<body>
+<nav>
+<span style="--clr:#3774a1;"><i class="fa-brands fa-linkedin"></i></span>
+<h3 style="--clr:#3774a1;">LİNKEDİN</h3>
+<label><h4 style="--clr:#001726;">Linkedin is the world's largest professional network on the Internet. You can use LinkedIn to find the right job or internship, connect and strengthen professional relationships, and learn the skills you need to succeed in your career.</h4></label>
+	<div style="--clr:#3774a1;"></div>
+</nav>
+
+<nav>
+<span style="--clr:#b8389f;"><img src="https://media-exp1.licdn.com/dms/image/C4D0BAQE3aOp3cdsq6A/company-logo_100_100/0/1641456287876?e=2147483647&v=beta&t=iUDD7obs_27kdizRMhio5TD1tpi2UdakXZRST4csJO4"></span>
+<h3 style="--clr:#b8389f;">CLARUSWAY</h3>
+<label><h4 style="--clr:#3a0026;">Clarusway provides quality IT training with reasonable prices to prepare individuals for next-generation jobs! From beginners to IT professionals, we offer cutting-edge programs used today by leading corporations.</h4></label>
+	<div style="--clr:#b8389f;"></div>
+</nav>
+
+
+<script type="text/javascript">
+	const div = document.querySelectorAll('nav');
+	function activeLink(){
+		div.forEach((item) =>
+		item.classList.remove('active'));
+		this.classList.add('active');
+	}
+	div.forEach((item) =>
+	item.addEventListener('click',activeLink));
+</script>
+</body>
+</html>
